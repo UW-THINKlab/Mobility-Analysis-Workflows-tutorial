@@ -69,16 +69,19 @@ COPY us-500.csv us-500.csv
 ```
 Remember to save these lines of command in file "Dockerfile".
 
-Then, Docker build
-```
-docker build -t R/newimage .
-```
+Then, it's time build our container image!
 
-Docker run
+Under directory "R example", use command:
 ```
-docker run -it --rm R/newimage
+docker build -t r/newimage .
 ```
+'-t' is giving a tag to the container image.
 
+Test the container image:
+```
+docker run -it --rm r/newimage
+```
+This command will launch a container instance from the container image, then do nothing and exit from the instance.
 ### 2.2 Python example
 
 
