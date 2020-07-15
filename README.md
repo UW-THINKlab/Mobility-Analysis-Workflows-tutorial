@@ -40,7 +40,10 @@ library(forcats)
 ```
 In order to "tell" the new container image to install these packages, we will have another Rscript, "install_packages.R". (Shown as below.)
 ```
-install.packages("readr","dplyr","ggplot2","forcats")
+install.packages("readr",repos = "http://cran.us.r-project.org")
+install.packages("dplyr",repos = "http://cran.us.r-project.org")
+install.packages("ggplot2",repos = "http://cran.us.r-project.org")
+install.packages("forcats",repos = "http://cran.us.r-project.org")
 ``` 
 Then, in the Dockerfile, we will add some commands:
 ```
