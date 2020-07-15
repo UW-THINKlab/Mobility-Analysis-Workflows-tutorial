@@ -83,7 +83,7 @@ Test the container image:
 ```
 docker run -it --rm r/newimage
 ```
-This command will launch a container instance from the container image, then do nothing and exit from the instance.
+This command will launch a container instance from the container image, then lead us to R interactive mode of the container image. At the end, the instance will be removed. 
 ### 2.2 Python example
 
 
