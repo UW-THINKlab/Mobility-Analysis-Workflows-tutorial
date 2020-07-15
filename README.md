@@ -77,7 +77,7 @@ Remember to save these lines of command in file "Dockerfile".
 
 Then, it's time build our container image!
 
-Under directory "R example", use command:
+Under directory "R_example", use command:
 ```
 docker build -t r/newimage .
 ```
