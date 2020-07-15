@@ -51,6 +51,8 @@ RUN Rscript install_packages.R
 ```
 Finally, we need to "tell" the new container image which scripts and data we need to use in the container, so we do "COPY" in the Dockerfile, which will copy the files to the new container image:
 ```
+# Create new directory in th container image
+RUN mkdir -p /output
 ## copy Scripts and data
 COPY install_packages.R install_packages.R
 COPY myScript.R myScript.R
@@ -61,6 +63,8 @@ After these steps, we have finished the Dockerfile as below:
 ## Base image
 FROM rocker/r-base:latest
 
+# Create new directory in th container image
+RUN mkdir -p /output
 ## copy Scripts and data
 COPY install_packages.R install_packages.R
 COPY myScript.R myScript.R
@@ -87,9 +91,9 @@ This command will launch a container instance from the container image, then lea
 ### 2.2 Python example
 ## 3. Run your script in your Docker container
 ### 3.1 R example
-
+```
 docker run -i --rm -v ${PWD}:/output r/newimage Rscript myScript.R
-
+```
 ### 3.2 R example
 
 ## 4. Connect a widget to the container
