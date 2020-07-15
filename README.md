@@ -17,6 +17,53 @@ If the help information is returned, then it's good to move to the next step.
 Dockerfile is a container profile detailing which scripts and dependencies will be included in the container.
 
 ### 2.1 R example
+First, Pull a container image(Linux) which have R installed from the Rocker DockerHub repository. This image will serve as base image when we build the new container image.
+```
+docker pull rocker/r-base
+```
+Then, we need to know which script we would like to be ran inside the container. In this example, under "R example", we will run "myScript.R" inside the container.
+```
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(forcats)
+```
+As show above, in "myScript.R", we need library "readr", "dplyr", "ggplot2", "forcats". In order to "tell" the new container image to install these packages, we will have another Rscript, "install_packages.R". (Shown as below)
+
+```
+install.packages("readr","dplyr","ggplot2","forcats")
+``` 
+
+Finally, we need to "tell" which scripts and data we need to use in the container, so we do "COPY":
+```
+## copy Scripts and data
+COPY myScript.R myScript.R
+COPY us-500.csv us-500.csv
+```
+
+After these steps, we have finished the Dockerfile as below:
+```
+## Base image
+FROM rocker/r-base:latest
+
+## install R-packages
+RUN Rscript install_packages.R
+
+## copy Scripts and data
+COPY myScript.R myScript.R
+COPY us-500.csv us-500.csv
+```
+Remember to save these lines of command in file "Dockerfile".
+
+Then, Docker build
+```
+docker build -t R/newimage .
+```
+
+Docker run
+```
+docker run -it --rm R/newimage
+```
 
 ### 2.2 Python example
 
@@ -39,9 +86,8 @@ Dockerfile is a container profile detailing which scripts and dependencies will 
 
 ## 5. Run the widget 
 
-
-
-
-
  We can use the “docker build” command to create a container from a Dockerfile, which is a container profile detailing which scripts and dependencies will be included in the container. For example, in order to run some python scripts inside the container, we will define the container python version in the Dockerfile by “FROM python:2.7” if we will use python2.7; to install dependencies of the python scripts, we will write “RUN pip install numpy pandas” in the Dockerfile to install “numpy” and “pandas” packages into the container we will build; “COPY Host_a.py Container_a.py” is to copy host python file “Host_a.py” to the container with name “Container_a.py”.
 After configuring the dependencies and running scripts in the Dockerfile, we can use “docker build” command to build the container based on the Dockerfile.
+
+## 6. Reference & Helpful link
+https://www.r-bloggers.com/running-your-r-script-in-docker/
