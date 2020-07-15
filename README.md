@@ -21,26 +21,37 @@ First, Pull a container image(Linux) which have R installed from the Rocker Dock
 ```
 docker pull rocker/r-base
 ```
-Then, we need to know which script we would like to be ran inside the container. In this example, under "R example", we will run "myScript.R" inside the container.
+In the Dockerfile, simply a text file named "Dockerfile" without any extension name, we will add some commands:
+```
+FROM rocker/r-base:latest
+```
+which means create a new container image from a base image. 
+
+Second, we need to know which script we would like to be ran inside the container. 
+
+In this example, under "R example" folder, we will run "myScript.R" inside the container.
+
+Below are showing that, in "myScript.R", we need library "readr", "dplyr", "ggplot2", "forcats".
 ```
 library(readr)
 library(dplyr)
 library(ggplot2)
 library(forcats)
 ```
-As show above, in "myScript.R", we need library "readr", "dplyr", "ggplot2", "forcats". In order to "tell" the new container image to install these packages, we will have another Rscript, "install_packages.R". (Shown as below)
-
+In order to "tell" the new container image to install these packages, we will have another Rscript, "install_packages.R". (Shown as below.)
 ```
 install.packages("readr","dplyr","ggplot2","forcats")
 ``` 
-
-Finally, we need to "tell" which scripts and data we need to use in the container, so we do "COPY":
+Then, in the Dockerfile, we will add some commands:
+```
+RUN Rscript install_packages.R
+```
+Finally, we need to "tell" the new container image which scripts and data we need to use in the container, so we do "COPY" in the Dockerfile, which will copy the files to the new container image:
 ```
 ## copy Scripts and data
 COPY myScript.R myScript.R
 COPY us-500.csv us-500.csv
 ```
-
 After these steps, we have finished the Dockerfile as below:
 ```
 ## Base image
