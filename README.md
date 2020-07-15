@@ -91,10 +91,11 @@ This command will launch a container instance from the container image, then lea
 ### 2.2 Python example
 ## 3. Run your script in your Docker container
 ### 3.1 R example
+Different from previous command, we add "-v" in the "docker run" command, which will map a host directory to a container directory. In the command below, we map current directory to "/output" directory of the container, then we will run "Rscript myScript.R" insider the container. Finally, in your current directory, the result from "myScript.R" will be generated.
 ```
 docker run -i --rm -v ${PWD}:/output r/newimage Rscript myScript.R
 ```
-### 3.2 R example
+### 3.2 Python example
 
 ## 4. Connect a widget to the container
 
