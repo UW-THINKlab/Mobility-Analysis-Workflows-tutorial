@@ -52,6 +52,7 @@ RUN Rscript install_packages.R
 Finally, we need to "tell" the new container image which scripts and data we need to use in the container, so we do "COPY" in the Dockerfile, which will copy the files to the new container image:
 ```
 ## copy Scripts and data
+COPY install_packages.R install_packages.R
 COPY myScript.R myScript.R
 COPY us-500.csv us-500.csv
 ```
@@ -60,12 +61,13 @@ After these steps, we have finished the Dockerfile as below:
 ## Base image
 FROM rocker/r-base:latest
 
-## install R-packages
-RUN Rscript install_packages.R
-
 ## copy Scripts and data
+COPY install_packages.R install_packages.R
 COPY myScript.R myScript.R
 COPY us-500.csv us-500.csv
+
+## install R-packages
+RUN Rscript install_packages.R
 ```
 Remember to save these lines of command in file "Dockerfile".
 
