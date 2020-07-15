@@ -85,17 +85,12 @@ docker run -it --rm r/newimage
 ```
 This command will launch a container instance from the container image, then lead us to R interactive mode of the container image. At the end, the instance will be removed. 
 ### 2.2 Python example
-
-
-
-
-
-
 ## 3. Run your script in your Docker container
+### 3.1 R example
 
+docker run -i --rm -v ${PWD}:/output r/newimage Rscript myScript.R
 
-
-
+### 3.2 R example
 
 ## 4. Connect a widget to the container
 
