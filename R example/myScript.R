@@ -12,7 +12,7 @@ plot_data <- df %>%
   count()
 
 # save manipulated data to output folder
-write_csv(plot_data, "plot_data.csv")
+write_csv(plot_data, "output/plot_data.csv")
 
 # create plot based on manipulated data
 plot <- plot_data %>% 
@@ -30,4 +30,4 @@ plot <- plot_data %>%
   theme_bw()
 
 # save plot to output folder
-ggsave("myplot.png", width = 10, height = 8, dpi = 100)
+ggsave("output/myplot.png", width = 10, height = 8, dpi = 100)
