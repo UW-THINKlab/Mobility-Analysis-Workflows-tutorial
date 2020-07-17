@@ -108,9 +108,9 @@ docker run --rm   -p 6080:6080 \
     --privileged --group-add root \
     biodepot/bwb
 ```
-After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb.) 
+After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb.)
 ### 4.2 Following video tutorial to create your first widget
-video link: https://www.youtube.com/watch?v=hqCr2Cs6EBQ
+Video link: https://www.youtube.com/watch?v=hqCr2Cs6EBQ. \
 In this tutorial, you can learn how to create a widget with a container image, that is, to connect the container image to the widget you created. \
 You can also learn to create a widget using python/R container image!
 
