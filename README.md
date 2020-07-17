@@ -97,16 +97,23 @@ docker run -i --rm -v ${PWD}:/output r/newimage Rscript myScript.R
 ```
 ### 3.2 Python example
 
-## 4. Connect a widget to the container
+## 4. Connect a widget to the container / Create a widget
+### 4.1 Launch Biodepot-workflow-builder(Bwb)
+Go to https://github.com/BioDepot/BioDepot-workflow-builder, and pull this repo to your computer, then run:
+```
+docker run --rm   -p 6080:6080 \
+    -v  ${PWD}/:/data  \
+    -v  /var/run/docker.sock:/var/run/docker.sock \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --privileged --group-add root \
+    biodepot/bwb
+```
+After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb.) 
+### 4.2 Following video tutorial to create your first widget
+video link: https://www.youtube.com/watch?v=hqCr2Cs6EBQ
+In this tutorial, you can learn how to create a widget with a container image, that is, to connect the container image to the widget you created. \
+You can also learn to create a widget using python/R container image!
 
-
-
-
-
-## 5. Run the widget 
-
- We can use the “docker build” command to create a container from a Dockerfile, which is a container profile detailing which scripts and dependencies will be included in the container. For example, in order to run some python scripts inside the container, we will define the container python version in the Dockerfile by “FROM python:2.7” if we will use python2.7; to install dependencies of the python scripts, we will write “RUN pip install numpy pandas” in the Dockerfile to install “numpy” and “pandas” packages into the container we will build; “COPY Host_a.py Container_a.py” is to copy host python file “Host_a.py” to the container with name “Container_a.py”.
-After configuring the dependencies and running scripts in the Dockerfile, we can use “docker build” command to build the container based on the Dockerfile.
-
-## 6. Reference & Helpful link
+## 5. Reference & Helpful link
 https://www.r-bloggers.com/running-your-r-script-in-docker/
+https://www.youtube.com/watch?v=hqCr2Cs6EBQ
