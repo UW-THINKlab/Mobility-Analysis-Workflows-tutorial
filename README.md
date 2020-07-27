@@ -117,3 +117,16 @@ You can also learn to create a widget using python/R container image!
 ## 5. Reference & Helpful link
 https://www.r-bloggers.com/running-your-r-script-in-docker/
 https://www.youtube.com/watch?v=hqCr2Cs6EBQ
+
+
+/*
+1. try our AWS
+2. Run App_data code
+3. Build container/ pull ours
+3.1 test
+4. Bwb
+5. build widgets
+5.1 ...
+5.2 ...
+6. workflow / load ours
+*/
