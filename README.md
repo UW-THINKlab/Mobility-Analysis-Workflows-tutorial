@@ -1,5 +1,31 @@
 # Running-script-in-Docker-tutorial
 This is a tutorial of Running script in Docker
+...
+finially, we will ....
+
+## 1. Try our AWS
+introduction...
+link... 
+fig
+## 2. Run App_data code
+introduction of app_data repo
+
+## 3. Build container
+### 3.1. Install Docker
+### 3.2. Write Dockerfile and build your Docker container with scripts / pull ours
+### 3.3. Run your script in your Docker container
+
+## 4. Run Bwb
+
+## 5. build widgets
+### 5.1 widget 1
+### 5.2 widget 2
+
+## 6. workflow / load ours
+
+
+
+
 
 
 ## 1. Install Docker
@@ -118,15 +144,3 @@ You can also learn to create a widget using python/R container image!
 https://www.r-bloggers.com/running-your-r-script-in-docker/
 https://www.youtube.com/watch?v=hqCr2Cs6EBQ
 
-
-/*
-1. try our AWS
-2. Run App_data code
-3. Build container/ pull ours
-3.1 test
-4. Bwb
-5. build widgets
-5.1 ...
-5.2 ...
-6. workflow / load ours
-*/
