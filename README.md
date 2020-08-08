@@ -1,5 +1,5 @@
 # Running-script-in-Docker-tutorial
-This is a tutorial of running scripts in Docker container and building widgets and workflows using Biodepot-workflow-builder(Bwb). In this tutorial, we will use App_data repository as an example to give a step-bystep guide of building containers, later widgets, and workflows. Finially, we will reproduce the workflow in the paper: XXX
+This is a tutorial of running our own scripts in Docker container and building widgets and workflows using Biodepot-workflow-builder(Bwb). In this tutorial, we will use *App_data repository* as an example to give a step-bystep guide of building containers, later widgets, and workflows. Finially, we will reproduce the workflow in the paper: XXX
 ## 1. Try our AWS
 You can quickly try our built workflow through AWS: XXX
 
@@ -17,10 +17,20 @@ In order to continue further steps, please download the repository by:
 ```
 git clone https://github.com/UW-THINKlab/app-data
 ```
-## 3. Build container
+## 3. Build Docker container
 ### 3.1. Install Docker
-### 3.2. Write Dockerfile and build your Docker container with scripts / pull ours
-### 3.3. Run your script in your Docker container
+Install Docker Desktop following instruction: https://docs.docker.com/get-docker/ \
+After installation and running Docker Desktop, you can test in the terminal with:
+```
+docker help 
+```
+or
+```
+sudo docker help
+```
+If the help information is returned, then it's good to move to the next step.
+### 3.2. Write Dockerfile and build your Docker container with the scripts / pull ours
+### 3.3. Run the scripts in your Docker container
 
 ## 4. Run Bwb
 
