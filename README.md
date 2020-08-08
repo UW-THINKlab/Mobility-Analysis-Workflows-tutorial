@@ -11,7 +11,7 @@ fig of result
 
 If you want to learn more about the workflow and widget, please read on or refer to: https://github.com/BioDepot/BioDepot-workflow-builder
 
-## 2. Run App_data code
+## 2. Download App_data code
 App_data repository is the code to handle mobility data(cellular and GPS data).
 In order to continue further steps, please download the repository by:
 ```
