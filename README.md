@@ -61,12 +61,12 @@ pull python base image:
 ```
 docker pull python:2.7
 ```
-then, in the directory where you downloaded the App_data code, run:
+then, in the directory where you downloaded the App_data code, run below command to build your container image:
 ```
 docker build -t biodepot/thinklab:workflow_v1 .
 ```
 ### 3.3. Run the scripts in your Docker container
-After we have the container image, run below command to test our container image:
+After you have the container image, run below command to test your container image:
 ```
 docker run -i --rm biodepot/thinklab:workflow_v1 python ReadAndPartition.py
 ```
