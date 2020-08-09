@@ -29,8 +29,49 @@ or
 sudo docker help
 ```
 If the help information is returned, then it's good to move to the next step.
-### 3.2. Write Dockerfile and build your Docker container with the scripts / pull ours
+### 3.2. Write Dockerfile and build your Docker container with the scripts / pull ours Docker container directly 
+Dockerfile is a container profile detailing which scripts and dependencies will be included in the container. We will give a step by step guide to create a Docker container which can provide running environment for App_data code. You can also skip this step by pull our Docker container directly using: 
+```
+docker pull biodepot/thinklab:workflow_v1
+docker pull biodepot/thinklab:vis_v1
+```
+First we show the Dockerfile, it should be included in App_data repository:
+```
+# the base container image we will ues
+FROM python:2.7
+
+RUN pip install numpy psutil func_timeout
+
+WORKDIR /
+
+COPY AddressOscillation.py AddressOscillation.py
+COPY class_cluster.py class_cluster.py
+COPY CombineExtractedStays.py CombineExtractedStays.py
+COPY distance.py distance.py
+COPY incremental_clustering.py incremental_clustering.py
+COPY IncrementalClustering.py IncrementalClustering.py
+COPY oscillation_type1.py oscillation_type1.py
+COPY ReadAndPartition.py ReadAndPartition.py
+COPY TraceSegmentationClustering.py TraceSegmentationClustering.py
+COPY UpdateStayDuration.py UpdateStayDuration.py
+COPY WriteCSVFile.py WriteCSVFile.py
+COPY util_func.py util_func.py
+```
+pull python base image:
+```
+docker pull python:2.7
+```
+then, in the directory where you downloaded the App_data code, run:
+```
+docker build -t biodepot/thinklab:workflow_v1 .
+```
 ### 3.3. Run the scripts in your Docker container
+After we have the container image, run below command to test our container image:
+```
+docker run -i --rm biodepot/thinklab:workflow_v1 python ReadAndPartition.py
+```
+
+
 
 ## 4. Run Bwb
 
