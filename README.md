@@ -3,11 +3,11 @@ This is a tutorial of running our own scripts in Docker container and building w
 ## 1. Try our AWS
 You can quickly try our built workflow through AWS: XXX
 
-fig of Bwb portal
+*fig of Bwb portal*
 
 You can simply click XXX module(widget) and click "start", then the workflow will run and you will have result like this:
 
-fig of result
+*fig of result*
 
 If you want to learn more about the workflow and widget, please read on or refer to: https://github.com/BioDepot/BioDepot-workflow-builder
 
@@ -29,6 +29,8 @@ or
 sudo docker help
 ```
 If the help information is returned, then it's good to move to the next step.
+
+*fig of docker command help info*
 ### 3.2. Write Dockerfile and build your Docker container with the scripts / pull ours Docker container directly 
 Dockerfile is a container profile detailing which scripts and dependencies will be included in the container. We will give a step by step guide to create a Docker container which can provide running environment for App_data code. You can also skip this step by pull our Docker container directly using: 
 ```
@@ -65,21 +67,45 @@ then, in the directory where you downloaded the App_data code, run below command
 ```
 docker build -t biodepot/thinklab:workflow_v1 .
 ```
+*fig of built container image*
+
 ### 3.3. Run the scripts in your Docker container
 After you have the container image, run below command to test your container image:
 ```
 docker run -i --rm biodepot/thinklab:workflow_v1 python ReadAndPartition.py
 ```
 
+*fig of returned result*
 
+## 4. Run Biodepot-workflow-builder(Bwb)
+Pull Bwb repository:
+```
+git clone https://github.com/BioDepot/BioDepot-workflow-builder
+```
+then run:
+```
+docker run --rm   -p 6080:6080 \
+    -v  ${PWD}/:/data  \
+    -v  /var/run/docker.sock:/var/run/docker.sock \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --privileged --group-add root \
+    biodepot/bwb
+```
+After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb.)
 
-## 4. Run Bwb
+*fig of Bwb*
 
-## 5. build widgets
+## 5. Build widgets in Bwb
 ### 5.1 widget 1
 ### 5.2 widget 2
 
-## 6. workflow / load ours
+
+
+
+## 6. Build workflow / load ours
+
+
+## 7. Run your workflow
 
 
 
