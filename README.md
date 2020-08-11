@@ -98,7 +98,9 @@ After the Bwb container is launched, go to link: http://localhost:6080/. (This i
 ## 5. Build widgets and workflow in Bwb !!!
 *fig of DCI*
 Shown as the figure above, our DCI workflow consists of 7 different widgets: “ReadAndPartition” widget, read the trip data and partition the data into two subsets; “IncrementalClustering”, perform incremental clustering on cellular data; “UpdateStayDuration”, update duration information; “AddressOscillation”, address oscillation problem; “CombineExtractedStays”, combine extracted cellular and GPS data, “WriteCSVFile”, write the result into CSV file; “TraceSegmentationClustering”, conduct trace segmentation clustering. 
+
 From the left side of the figure to the right side, the workflow will run the widgets sequentially along the dot line arrow between each two widgets. 
+
 The dot lines denote the workflow running direction and which parameters of one widget are passed to the others.
 In this section, we will give a step-by-step guide to build these widgets and finally connect them to a complete workflow. Also, if you would like to skip this step, you can download our workflow directly: *link* XXXX.
 ### 5.1 ReadAndPartition widget
