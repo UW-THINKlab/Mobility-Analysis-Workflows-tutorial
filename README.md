@@ -103,8 +103,10 @@ Shown as the figure above, our DCI workflow consists of 7 different widgets: “
 From the left side of the figure to the right side, the workflow will run the widgets sequentially along the dot line arrow between each two widgets. The dot lines denote the workflow running direction and which parameters of one widget are passed to the others.
 
 In this section, we will give a step-by-step guide to build these widgets and finally connect them together to have a complete workflow: follow our video tutorial: *link*
+
 Also, if you would like to skip this step, you can download our workflow directly: *link* XXXX.
 
 ## 6. Run your workflow
 After building the workflow, click "ReadAndPartition" widget and click "start", your workflow will run!
+
 *fig of result*
