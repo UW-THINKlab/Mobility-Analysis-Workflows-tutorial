@@ -11,13 +11,13 @@ You can simply click XXX module(widget) and click "start", then the workflow wil
 
 If you want to learn more about the workflow and widget, please read on or refer to: https://github.com/BioDepot/BioDepot-workflow-builder
 
-## 2. Download App_data code
+## 2. Download eveything to run in your own PC ...
 App_data repository is the code to handle mobility data(cellular and GPS data).
 In order to continue further steps, please download the repository by:
 ```
 git clone https://github.com/UW-THINKlab/app-data
 ```
-## 3. Build Docker container
+## 3. Build Docker container / (modifiy the widget/workflow.. param..)
 ### 3.1. Install Docker
 Install Docker Desktop following instruction: https://docs.docker.com/get-docker/ \
 After installation and running Docker Desktop, you can test in the terminal with:
@@ -77,7 +77,7 @@ docker run -i --rm biodepot/thinklab:workflow_v1 python ReadAndPartition.py
 
 *fig of returned result*
 
-## 4. Run Biodepot-workflow-builder(Bwb)
+## 4. Run Biodepot-workflow-builder(Bwb).  DIY your own workflow
 Pull Bwb repository:
 ```
 git clone https://github.com/BioDepot/BioDepot-workflow-builder
