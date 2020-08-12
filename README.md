@@ -31,8 +31,8 @@ sudo docker help
 If the help information is returned, then it's good to move to the next step.
 
 *fig of docker command help info*
-### 3.2. Write Dockerfile and build your Docker container with the scripts / pull ours Docker container directly 
-Dockerfile is a container profile detailing which scripts and dependencies will be included in the container. We will give a step by step guide to create a Docker container which can provide running environment for App_data code. You can also skip this step by pull our Docker container directly using: 
+### 3.2. Build your Docker container 
+Dockerfile is a container profile detailing which scripts and dependencies will be included in the container. We will give a step by step guide to create a Docker container which can provide running environment for App_data code. You can also skip this step by pull our Docker container directly using below commands, then you can move on to section 3.3: 
 ```
 docker pull biodepot/thinklab:workflow_v1
 docker pull biodepot/thinklab:vis_v1
@@ -95,24 +95,18 @@ After the Bwb container is launched, go to link: http://localhost:6080/. (This i
 
 *fig of Bwb*
 
-## 5. Build widgets and workflow in Bwb !!!
+## 5. Build widgets and workflow in Bwb
 *fig of DCI*
+
 Shown as the figure above, our DCI workflow consists of 7 different widgets: “ReadAndPartition” widget, read the trip data and partition the data into two subsets; “IncrementalClustering”, perform incremental clustering on cellular data; “UpdateStayDuration”, update duration information; “AddressOscillation”, address oscillation problem; “CombineExtractedStays”, combine extracted cellular and GPS data, “WriteCSVFile”, write the result into CSV file; “TraceSegmentationClustering”, conduct trace segmentation clustering. 
 
-From the left side of the figure to the right side, the workflow will run the widgets sequentially along the dot line arrow between each two widgets. 
+From the left side of the figure to the right side, the workflow will run the widgets sequentially along the dot line arrow between each two widgets. The dot lines denote the workflow running direction and which parameters of one widget are passed to the others.
 
-The dot lines denote the workflow running direction and which parameters of one widget are passed to the others.
-In this section, we will give a step-by-step guide to build these widgets and finally connect them to a complete workflow. Also, if you would like to skip this step, you can download our workflow directly: *link* XXXX.
-### 5.1 ReadAndPartition widget
-### 5.2 IncrementalClustering widget
-### 5.2 UpdateStayDuration widget
-### 5.2 AddressOscillation widget
-### 5.2 CombineExtractedStays widget
-### 5.2 WriteCSVFile widget
-(maybe a video would be better than text)
+In this section, we will give a step-by-step guide to build these widgets and finally connect them together to have a complete workflow: follow our video tutorial: *link*
+Also, if you would like to skip this step, you can download our workflow directly: *link* XXXX.
 
 ## 6. Run your workflow
-
+After building the workflow, click "ReadAndPartition" widget and click "start", your workflow will run!
 *fig of result*
 
 
