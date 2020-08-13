@@ -9,6 +9,7 @@ You will see our workflow like this:
 
 You can simply click "ReadAndPartition" widget and click "start", then the workflow will run and you will have result csv file like this:
 
+(better put result in bwb)
 ![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI%20running%20result.png)
 
 If you want to learn more about the workflow and widget, please read on or refer to: https://github.com/BioDepot/BioDepot-workflow-builder
@@ -28,8 +29,8 @@ You can test in the terminal with:
 ```
 docker run hello-world
 ```
-You will get the result:
-*fig*
+You will get the result from Docker:
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/Docker%20group%20result.png)
 ### 2.2. Download Biodepot-workflow-builder(Bwb)
 Pull Bwb repository:
 ```
@@ -46,7 +47,7 @@ docker run --rm   -p 6080:6080 \
 ```
 After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb)
 
-*BWB figure*
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/Bwb.png)
 
 ### 2.3. Download DCI container images and Workflow
 To download DCI container image:
@@ -64,17 +65,14 @@ Then you should see the DCI workflow is loaded. You should see our DCI workflow.
 ### 2.4 Download test data
 You can download our test data via: XXX
 
-*fig*
-
-Then put the data under the Bwb folder, "/BioDepot-workflow-builder". 
+Then put the data file under the Bwb folder, "/BioDepot-workflow-builder". 
 
 Click "ReadAndPartition" widget and click "start", then the workflow will run.
-
 
 ## 3. Modify the workflow and widgets
 ### 3.1. Change input & output 
 You can Change input & output by clicking the widget you want modify, and you will see the config form. You can simply change the input & output by modify the corresponding text.
-*fig*
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/change%20param.png)
 ### 3.2. Change parameters
 Similarly, you can change the parameters of any widget by modify the parameters directly in the config form.
 
