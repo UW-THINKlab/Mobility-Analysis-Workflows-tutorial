@@ -3,11 +3,13 @@ This is a tutorial of running our own scripts in Docker container and building w
 ## 1. Try our AWS
 You can quickly try our built workflow through AWS: XXX
 
-*fig of DCI workflow*
+You will see our workflow like this:
 
-You can simply click XXX module(widget) and click "start", then the workflow will run and you will have result like this:
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI.png)
 
-*fig of result*
+You can simply click XXX module(widget) and click "start", then the workflow will run and you will have result csv file like this:
+
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI%20running%20result.png)
 
 If you want to learn more about the workflow and widget, please read on or refer to: https://github.com/BioDepot/BioDepot-workflow-builder
 
