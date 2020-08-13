@@ -7,7 +7,7 @@ You will see our workflow like this:
 
 ![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI.png)
 
-You can simply click XXX module(widget) and click "start", then the workflow will run and you will have result csv file like this:
+You can simply click "ReadAndPartition" widget and click "start", then the workflow will run and you will have result csv file like this:
 
 ![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI%20running%20result.png)
 
@@ -17,15 +17,19 @@ If you want to learn more about the workflow and widget, please read on or refer
 ### 2.1. Install Docker
 Install Docker Desktop following instruction: https://docs.docker.com/get-docker/ 
 
-After installation and running Docker Desktop, you can test in the terminal with:
+After installation, add the current PC user to docker group:
 ```
-docker help 
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
 ```
-or
+You can test in the terminal with:
+
 ```
-sudo docker help
+docker run hello-world
 ```
-(groupby docker...)
+You will get the result:
+*fig*
 ### 2.2. Download Biodepot-workflow-builder(Bwb)
 Pull Bwb repository:
 ```
@@ -40,9 +44,10 @@ docker run --rm   -p 6080:6080 \
     --privileged --group-add root \
     biodepot/bwb
 ```
-After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb.)
+After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb)
 
-*fig of Bwb*
+*BWB figure*
+
 ### 2.3. Download DCI container images and Workflow
 To download DCI container image:
 ```
@@ -51,10 +56,20 @@ docker pull biodepot/thinklab:vis_v1
 ```
 DCI Workflow download link:
 
-Then place the downloaded workflow under Bwb folder.
+Then place the downloaded workflow under the Bwb folder, "/BioDepot-workflow-builder".
 
 After downloading the DCI container image and Workflow, cilck "File" in the menu bar, and click "load workflow", then choose the downloaded workflow directory.
 Then you should see the DCI workflow is loaded. You should see our DCI workflow.
+
+### 2.4 Download test data
+You can download our test data via: XXX
+
+*fig*
+
+Then put the data under the Bwb folder, "/BioDepot-workflow-builder". 
+
+Click "ReadAndPartition" widget and click "start", then the workflow will run.
+
 
 ## 3. Modify the workflow and widgets
 ### 3.1. Change input & output 
