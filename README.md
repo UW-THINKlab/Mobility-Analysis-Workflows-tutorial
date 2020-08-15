@@ -78,7 +78,7 @@ Similarly, you can change the parameters of any widget by modify the parameters 
 
 ## 4. Build your own workflow
 ### 4.1. Build your Docker container 
-Please install Docker follow the section 2.1.
+Please install Docker following section 2.1.
 
 Dockerfile is a container profile detailing which scripts and dependencies will be included in the container. We will give a step by step guide to create a Docker container which can provide running environment for App_data code. 
 
@@ -136,8 +136,7 @@ docker run --rm   -p 6080:6080 \
 After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb.)
 
 ## 4.3. Build widgets and workflow in Bwb
-*fig of DCI*
-
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI.png)
 Shown as the figure above, our DCI workflow consists of 7 different widgets: “ReadAndPartition” widget, read the trip data and partition the data into two subsets; “IncrementalClustering”, perform incremental clustering on cellular data; “UpdateStayDuration”, update duration information; “AddressOscillation”, address oscillation problem; “CombineExtractedStays”, combine extracted cellular and GPS data, “WriteCSVFile”, write the result into CSV file; “TraceSegmentationClustering”, conduct trace segmentation clustering. 
 
 From the left side of the figure to the right side, the workflow will run the widgets sequentially along the dot line arrow between each two widgets. The dot lines denote the workflow running direction and which parameters of one widget are passed to the others.
