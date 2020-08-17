@@ -9,8 +9,7 @@ You will see our workflow like this:
 
 You can simply click "ReadAndPartition" widget and click "start", then the workflow will run and you will have result csv file like this:
 
-(better put result in bwb)
-![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI%20running%20result.png)
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/running%20result.png)
 
 If you want to learn more about the workflow and widget, please read on or refer to: https://github.com/BioDepot/BioDepot-workflow-builder
 
@@ -55,7 +54,7 @@ To download DCI container image:
 docker pull biodepot/thinklab:workflow_v1
 docker pull biodepot/thinklab:vis_v1
 ```
-DCI Workflow download link:
+DCI Workflow download link: XXX
 
 Then place the downloaded workflow under the Bwb folder, "/BioDepot-workflow-builder".
 
@@ -65,9 +64,9 @@ Then you should see the DCI workflow is loaded. You should see our DCI workflow.
 ### 2.4 Download test data
 You can download our test data via: XXX
 
-Then put the data file under the Bwb folder, "/BioDepot-workflow-builder". 
+Then create a new directory, "/BioDepot-workflow-builder/trans_data", and put the data file under that directory. 
 
-Click "ReadAndPartition" widget and click "start", then the workflow will run.
+Click "ReadAndPartition" widget and click "start", and the workflow will run. You should see the same running result as we shown in section 1.
 
 ## 3. Modify the workflow and widgets
 ### 3.1. Change input & output 
@@ -114,9 +113,9 @@ docker build -t biodepot/thinklab:workflow_v1 .
 ```
 *fig of built container image*
 
-After you have the container image, run below command to test your container image:
+After you have the container image, and download the test data following section 2.4, run below command to test your container image:
 ```
-docker run -i --rm biodepot/thinklab:workflow_v1 python ReadAndPartition.py
+docker run -i --rm biodepot/thinklab:workflow_v1 python ReadAndPartition.py /BioDepot-workflow-builder/trans_data/anExample.csv /BioDepot-workflow-builder/trans_data/GPS.json /BioDepot-workflow-builder/trans_data/Cell.json 100
 ```
 
 *fig of returned result*
@@ -144,6 +143,4 @@ From the left side of the figure to the right side, the workflow will run the wi
 In this section, we will give a step-by-step guide to build these widgets and finally connect them together to have a complete workflow: follow our video tutorial: *link*
 
 ## 4.4. Run your workflow
-After building the workflow, click "ReadAndPartition" widget and click "start", your workflow will run!
-
-*fig of result*
+After building the workflow, click "ReadAndPartition" widget and click "start", your workflow will start to run!
