@@ -61,7 +61,7 @@ Then create a new directory, "/BioDepot-workflow-builder/trans_data", and put th
 Click "ReadAndPartition" widget and click "start", and the workflow will run. You should see the same running result as we shown in section 1.
 
 
--------------------------------------------------------------------------------------------------------------------
+====================================================================================================
 
 
 ## 1. Download & run workflow application on your own PC
