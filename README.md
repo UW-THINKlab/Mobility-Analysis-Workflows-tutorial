@@ -1,19 +1,70 @@
-# Running-script-in-Docker-tutorial
-This is a tutorial of running our own scripts in Docker container and building widgets and workflows using Biodepot-workflow-builder(Bwb). In this tutorial, we will use *App_data repository*(Link: XXX) as an example to give a step-bystep guide of building containers, widgets, and workflows. Finially, we will reproduce the workflow in the paper: XXX
-## 1. Try our AWS
-You can quickly try our built workflow through AWS: XXX
+# Mobility Analysis Workflows tutorial
+This is a tutorial of running our own scripts in Docker container and building widgets and workflows using Biodepot-workflow-builder(Bwb). In this tutorial, we will use **App_data repository**(Link: XXX) as an example to give a step-bystep guide of building containers, widgets, and workflows. Finially, we will reproduce the workflow in the paper: XXX
 
-You will see our workflow like this:
+Part 1 Prepare containers
+Step 1: install Docker (Section 2.1 on Github);
+Step 2: download Docker image containers from DockerHub (Section 2.3 on Github; please separate downloading containers and downloading workflows; give the command for downloading all 4 containers);
+Step 2 (optional): create containers from scratch (Section 4.1 on Github; give the dockerfiles for creating the 4 containers);
+Part 2 Prepare workflows
+Step 3: download Bwb (Section 2.2 on GitHub)
+Step 4: download the test data (Section 2.4 on GitHub; create separate directories for the two case studies)
 
-![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/DCI.png)
 
-You can simply click "ReadAndPartition" widget and click "start", then the workflow will run and you will have result csv file like this:
 
-![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/running%20result.png)
+## 1. Prepare Docker containers
+### 1.1. Download Docker
+Install Docker Desktop following instruction: https://docs.docker.com/get-docker/ 
 
-If you want to learn more about the workflow and widget, please read on or refer to: https://github.com/BioDepot/BioDepot-workflow-builder
+After installation, add the current PC user to docker group:
+```
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
+```
+You can test in the terminal with:
 
-## 2. Download & run workflow application on your own PC
+```
+docker run hello-world
+```
+You will get the result from Docker:
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/Docker%20group%20result.png)
+### 1.2. Download Docker images 
+To download MAW Docker images:
+```
+docker pull biodepot/thinklab:workflow_v1
+docker pull biodepot/thinklab:vis_v1
+```
+## 2. Prepare workflows
+## 2.1 download Bwb
+Download Biodepot-workflow-builder(Bwb) repository:
+```
+git clone https://github.com/BioDepot/BioDepot-workflow-builder
+```
+then run:
+```
+docker run --rm   -p 6080:6080 \
+    -v  ${PWD}/:/data  \
+    -v  /var/run/docker.sock:/var/run/docker.sock \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    --privileged --group-add root \
+    biodepot/bwb
+```
+After the Bwb container is launched, go to link: http://localhost:6080/. (This is a visualizable platform of Bwb)
+
+![alt text](https://github.com/Ien001/Running-script-in-Docker-tutorial/blob/master/figures/Bwb.png)
+
+## 2.2 download the test data (Section 2.4 on GitHub; create separate directories for the two case studies)
+You can download our test data via: XXX
+
+Then create a new directory, "/BioDepot-workflow-builder/trans_data", and put the data file under that directory. 
+
+Click "ReadAndPartition" widget and click "start", and the workflow will run. You should see the same running result as we shown in section 1.
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+## 1. Download & run workflow application on your own PC
 ### 2.1. Install Docker
 Install Docker Desktop following instruction: https://docs.docker.com/get-docker/ 
 
