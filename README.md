@@ -6,7 +6,7 @@ This is a tutorial of running our own scripts in Docker container and building w
 ### 1.1. Download Docker
 Install Docker Desktop following instruction: https://docs.docker.com/get-docker/ 
 
-After installation, add the current user of your PC to docker group:
+After installation, add the current user of your PC to docker group (for Unix System user):
 ```
 sudo groupadd docker
 sudo gpasswd -a $USER docker
