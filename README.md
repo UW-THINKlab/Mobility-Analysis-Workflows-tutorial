@@ -1,5 +1,8 @@
 # Mobility-Analysis-Workflows-tutorial
 This is the tutorial for the two case studies of our paper XXX \
+
+For our Video tutorial, please check: XXX
+
 All commands in this tutorial should be executed on Mac/Linux terminal or Windows command-line interface. \
 Before starting the tutorial, please navigate to the directory where you want all the downloaded tools and data to be stored, using the following command on the terminal/command-line interface.\
 Windows:\
