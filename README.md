@@ -34,13 +34,23 @@ Download Biodepot-workflow-builder(Bwb) repository: \
 
 Go to “/BioDepot-workflow-builder” directory. For Windows users, run:
 ```
-docker run --rm  -p 6080:6080 -v  %cd%/:/data  -v  /var/run/docker.sock:/var/run/docker.sock 
-                    -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --group-add root biodepot/bwb
+docker run --rm -p 6080:6080 
+                -v %cd%/:/data  
+                -v  /var/run/docker.sock:/var/run/docker.sock 
+                -v /tmp/.X11-unix:/tmp/.X11-unix 
+                --privileged 
+                --group-add root 
+                biodepot/bwb
 ```
 For MAC/Linux Users, run:
 ```
-docker run --rm  -p 6080:6080 -v  ${PWD}/:/data  -v  /var/run/docker.sock:/var/run/docker.sock 
-                    -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --group-add root biodepot/bwb
+docker run --rm -p 6080:6080 
+                -v  ${PWD}/:/data  
+                -v  /var/run/docker.sock:/var/run/docker.sock 
+                -v /tmp/.X11-unix:/tmp/.X11-unix 
+                --privileged 
+                --group-add root 
+                biodepot/bwb
 ```
 This command will take a while to be executed because it will pull the Bwb Docker image automatically. Upon completion, the following information should be displayed on the terminal.
 
