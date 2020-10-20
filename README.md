@@ -1,5 +1,5 @@
 # Mobility-Analysis-Workflows-tutorial
-This is the tutorial for the two case studies of our paper XXX \
+This is the tutorial for the two case studies of our paper XXX 
 
 For our Video tutorial, please check: XXX
 
