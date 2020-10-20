@@ -20,7 +20,7 @@ You can test in the terminal with: \
 `docker run hello-world`  \
 You will get the result from Docker: 
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Docker%20group%20result.png)
 
 ### 1.2. Download Docker images 
 To download MAW Docker images: (the repository is private right now, may encounter some issues downloading...) \
@@ -44,11 +44,11 @@ docker run --rm  -p 6080:6080 -v  ${PWD}/:/data  -v  /var/run/docker.sock:/var/r
 ```
 This command will take a while to be executed because it will pull the Bwb Docker image automatically. Upon completion, the following information should be displayed on the terminal.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/BWB%20start.png)
 
 To launch Bwb, go to link: http://localhost:6080/ using any web browser, which leads to the graphical interface of Bwb.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Bwb.png)
 
 ### 2.2 Download the test data 
 You can download our test data for Case study 1 via: 
@@ -76,20 +76,20 @@ Then save the downloaded workflow folder under the Bwb folder, "/BioDepot-workfl
 After downloading the workflow for Case study 1, click "File" in the menu bar, and click "load workflow", move to the “/data” directory of Bwb, then choose the downloaded workflow directory (do not enter the directory) and click “Choose”.
 Then you should see our workflow for Case study 1 is loaded in Bwb.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%201.png)
 
 After loading the workflow, double-click "TraceSegmentationClustering" widget and click "start", your workflow will start to run! If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "TraceSegmentationClustering" widget before start running it. After the workflow is completed, you will see the following output.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%201%20result.png)
 
 ### 3.2 Case study 2
 Similarly, you can load the workflow for Case study 2 in Bwb. 
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202.png)
 
 After loading the workflow, double-click "CellIncrementalClustering" widget and click "start", your workflow will start to run! If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "CellIncrementalClustering" widget before start running it. After the workflow is completed, you will see the following output.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202%20result.png)
 
 ## 4. Modify the workflow and widgets
 ### 4.1. Change input and output 
@@ -99,7 +99,7 @@ For case study 1, the default input file is /BioDepot-workflow-builder/trans_dat
 
 For case study 2, the default input file is /BioDepot-workflow-builder/trans_data/case2.csv, which should be the Input for the first widget “CellIncrementalClustering”.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Change%20Param%20case%201.png)
 
 ### 4.2. Change parameters
 Similarly, you can change the parameters of a widget by typing in the parameters directly in the configuration form. For example, in the above screenshot for case study 1, the widget “TraceSegmentationClustering” has two parameters, “SpatialConstraint” and “DurationConstraint”, whose default values are sets as 0.2 ans 300, respectively. Customized parameter values can be typed in corresponding textboxes.
@@ -111,13 +111,13 @@ First, the widget “AddressOscillation” and the subsequent widget “CellUpda
 
 Then, a link needs to be drawn from the remaining “CellUpdateStayDuration-post” widget to the “gnumeric” widget. To do so, click on the right edge of “CellUpdateStayDuration-post”, hold and drag to the left edge of “gnumeric”. Upon release the click, a link configuration window will pop up as shown in the following screenshot.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Add%20Link.png)
 
 The link configuration window defines the functionality of the link. In the above screenshot, the link means the output of “CellUpdateStayDuration-post” serves as input to “gnumeric”, and should be kept this way. If the link is configured differently, it can be adjusted by clicking the checkboxes. Then click “OK” to confirm the configuration and close the pop-up window. The modified workflow looks as below.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Delete%20widget.png)
 
 The modified workflow can be run similar as the unmodified version. After the workflow is completed, the output should look as below.
 
-![result](https://github.com/Ien001/AG-CNN/blob/master/result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202%20result.png)
 
