@@ -59,7 +59,7 @@ This command will take a while to be executed because it will pull the Bwb Docke
 
 To launch MAW, go to link: http://localhost:6080/ using any web browser, which leads to the graphical interface of MAW.
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Bwb.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/MAW.png)
 
 ### 2.2 Download the test data 
 You can download our test data for Case study 1 via: 
