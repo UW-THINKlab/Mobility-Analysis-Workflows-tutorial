@@ -26,7 +26,7 @@ To download MAW Docker images: (the repository is private right now, may encount
 `docker pull biodepot/thinklab:maw`
 
 ## 2. Prepare workflows
-### 2.1 Download Bwb
+### 2.1 Download Bwb repository
 Download and install Git, following the instructions on: https://git-scm.com/downloads \
 Download Biodepot-workflow-builder(Bwb) repository: \
 `git clone https://github.com/BioDepot/BioDepot-workflow-builder`
