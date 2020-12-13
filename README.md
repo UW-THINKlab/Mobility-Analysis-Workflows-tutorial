@@ -73,7 +73,7 @@ Go to https://drive.google.com/drive/folders/1X-6vRUGrTzZIn_nBHISvxo6-MhzyFp6s?u
 
 Then save the downloaded workflow folder under the folder, "/BioDepot-workflow-builder".
 
-### 2.4 Download workflow for case study 2
+### 2.4 Download workflow for Case study 2
 Go to https://drive.google.com/drive/folders/1FRBitUQrzp-pESVmYgBd28bMSLGNe3H5?usp=sharing, and download the “MAW_case2” folder.
 
 Then save the downloaded workflow folder under the folder, "/BioDepot-workflow-builder".
