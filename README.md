@@ -1,4 +1,6 @@
 # Mobility-Analysis-Workflows-tutorial
+Watch our video tutorial to learn how to work with MAW:https://www.youtube.com/watch?v=9emIszx2hgo&t=9s
+
 All commands in this tutorial should be executed on Mac/Linux terminal or Windows command-line interface. \
 Before starting the tutorial, please navigate to the directory where you want all the downloaded tools and data to be stored, using the following command on the terminal/command-line interface.\
 Windows:\
