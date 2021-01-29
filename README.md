@@ -62,21 +62,21 @@ To launch MAW, go to link: http://localhost:6080/ using any web browser, which l
 ### 2.2 Download the test data 
 You can download our test data for Case study 1 via: 
 
-https://drive.google.com/file/d/1_fsEILhJZeQZHxqXllhOWnHhILOfp5q1/view?usp=sharing
+https://drive.google.com/file/d/150etjTZ7EpF33l2Op1KC6xG29THicoo_/view?usp=sharing
 
 You can download our test data for Case study 2 via: 
 
-https://drive.google.com/file/d/16oUpd-Ds7-Lv46G8kvPDLUO9p_iuvTim/view?usp=sharing
+https://drive.google.com/file/d/1GzEfcTjlkVM2SpuKzAGIgKJAyKMsGrtz/view?usp=sharing
 
 Then create a new directory, "/BioDepot-workflow-builder/trans_data", and put the data file under this directory. 
 
 ### 2.3 Download workflow for Case study 1
-Go to https://drive.google.com/drive/folders/1X-6vRUGrTzZIn_nBHISvxo6-MhzyFp6s?usp=sharing, anddownload the “MAW_case1” folder. 
+Go to https://drive.google.com/drive/folders/14nxCNoTl9m94VDOMfTAZOAVsMEkP9rzM?usp=sharing, anddownload the “MAW_case1” folder. 
 
 Then save the downloaded workflow folder under the folder, "/BioDepot-workflow-builder".
 
 ### 2.4 Download workflow for Case study 2
-Go to https://drive.google.com/drive/folders/1FRBitUQrzp-pESVmYgBd28bMSLGNe3H5?usp=sharing, and download the “MAW_case2” folder.
+Go to https://drive.google.com/drive/folders/1M6b1ASrhz838adzLbLmC62iB9dyMo3Y7?usp=sharing, and download the “MAW_case2” folder.
 
 Then save the downloaded workflow folder under the folder, "/BioDepot-workflow-builder".
 
