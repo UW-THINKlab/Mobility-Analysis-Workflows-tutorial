@@ -25,11 +25,11 @@ You will get the result from Docker:
 
 ### 1.2. Download Docker images 
 To download MAW Docker images: \
-`
+```
 docker pull uwthinklab/maw_gui:v1
 docker pull uwthinklab/maw_containers_1:v1
 docker pull uwthinklab/maw_visualization:v1
-`
+```
 
 ## 2. Prepare workflows
 ### 2.1 Download Bwb repository
