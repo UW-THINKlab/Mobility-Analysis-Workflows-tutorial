@@ -24,8 +24,12 @@ You will get the result from Docker:
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Docker%20group%20result.png)
 
 ### 1.2. Download Docker images 
-To download MAW Docker images: (the repository is private right now, may encounter some issues downloading...) \
-`docker pull uwthinklab/maw_gui:v1`
+To download MAW Docker images: \
+`
+docker pull uwthinklab/maw_gui:v1
+docker pull uwthinklab/maw_containers_1:v1
+docker pull uwthinklab/maw_visualization:v1
+`
 
 ## 2. Prepare workflows
 ### 2.1 Download Bwb repository
