@@ -25,7 +25,7 @@ You will get the result from Docker:
 
 ### 1.2. Download Docker images 
 To download MAW Docker images: (the repository is private right now, may encounter some issues downloading...) \
-`docker pull biodepot/thinklab:maw`
+`docker pull uwthinklab/maw_gui:v1`
 
 ## 2. Prepare workflows
 ### 2.1 Download Bwb repository
@@ -40,7 +40,7 @@ docker run --rm   -p 6080:6080 \
     -v  /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     --privileged --group-add root \
-    biodepot/thinklab:maw
+    uwthinklab/maw_gui:v1
 ```
 For MAC/Linux Users, run:
 ```bash 
@@ -49,7 +49,7 @@ docker run --rm   -p 6080:6080 \
     -v  /var/run/docker.sock:/var/run/docker.sock \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     --privileged --group-add root \
-    biodepot/thinklab:maw
+    uwthinklab/maw_gui:v1
 ```
 This command will take a while to be executed because it will pull the Bwb Docker image automatically. Upon completion, the following information should be displayed on the terminal.
 
@@ -70,15 +70,10 @@ https://drive.google.com/file/d/1GzEfcTjlkVM2SpuKzAGIgKJAyKMsGrtz/view?usp=shari
 
 Then create a new directory, "/BioDepot-workflow-builder/trans_data", and put the data file under this directory. 
 
-### 2.3 Download workflow for Case study 1
-Go to https://drive.google.com/drive/folders/14nxCNoTl9m94VDOMfTAZOAVsMEkP9rzM?usp=sharing, anddownload the “MAW_case1” folder. 
+### 2.3 Download workflow for Case study 1 & Case study 2
+Go to https://github.com/UW-THINKlab/MAW_workflows, and download the “MAW_case1” folder and the “MAW_case2” folder. 
 
-Then save the downloaded workflow folder under the folder, "/BioDepot-workflow-builder".
-
-### 2.4 Download workflow for Case study 2
-Go to https://drive.google.com/drive/folders/1M6b1ASrhz838adzLbLmC62iB9dyMo3Y7?usp=sharing, and download the “MAW_case2” folder.
-
-Then save the downloaded workflow folder under the folder, "/BioDepot-workflow-builder".
+Then save the downloaded workflow folders under the folder, "/BioDepot-workflow-builder".
 
 ## 3. Run Case studies 1 & 2
 ### 3.1 Case study 1
