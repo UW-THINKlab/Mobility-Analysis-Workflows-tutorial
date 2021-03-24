@@ -113,15 +113,15 @@ For case study 2, the default input file is /BioDepot-workflow-builder/trans_dat
 Similarly, you can change the parameters of a widget by typing in the parameters directly in the configuration form. For example, in the above screenshot for case study 1, the widget “TraceSegmentationClustering” has two parameters, “SpatialConstraint” and “DurationConstraint”, whose default values are sets as 0.2 ans 300, respectively. Customized parameter values can be typed in corresponding textboxes.
 
 ### 4.3. Customize a workflow
-There are numerous ways a workflow can be changed and customized. We give an example of how to skip the widget of “AddressOscillation” in case study 2. 
+There are numerous ways a workflow can be changed and customized. We give an example of how to skip the widget of “Oscillation Corrector” in case study 2. 
 
-First, the widget “AddressOscillation” and the subsequent widget “UpdateStayDuration-post” need to be removed from the canvas. To do so, right-click on each widget, and click “Remove”. 
+First, the widget “Oscillation Corrector” and the subsequent widget “Stay Duration Calculator” need to be removed from the canvas. To do so, right-click on each widget, and click “Remove”. 
 
-Then, a link needs to be drawn from the remaining “UpdateStayDuration-post” widget to the “gnumeric” widget. To do so, click on the right edge of “CellUpdateStayDuration-post”, hold and drag to the left edge of “gnumeric”. Upon release the click, a link configuration window will pop up as shown in the following screenshot.
+Then, a link needs to be drawn from the remaining “Stay Duration Calculator” widget to the “gnumeric” widget. To do so, click on the right edge of  “Stay Duration Calculator”, hold and drag to the left edge of “gnumeric”. Upon release the click, a link configuration window will pop up as shown in the following screenshot.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Add%20Link.png)
 
-The link configuration window defines the functionality of the link. In the above screenshot, the link means the output of “UpdateStayDuration-post” serves as input to “gnumeric”, and should be kept this way. If the link is configured differently, it can be adjusted by clicking the checkboxes. Then click “OK” to confirm the configuration and close the pop-up window. The modified workflow looks as below.
+The link configuration window defines the functionality of the link. In the above screenshot, the link means the output of  “Stay Duration Calculator” serves as input to “gnumeric”, and should be kept this way. If the link is configured differently, it can be adjusted by clicking the checkboxes. Then click “OK” to confirm the configuration and close the pop-up window. The modified workflow looks as below.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Delete%20widget.png)
 
