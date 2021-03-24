@@ -33,7 +33,7 @@ docker pull uwthinklab/maw_visualization:v1
 
 ## 2. Prepare workflows
 ### 2.1 Download Bwb repository
-Download and install Git, following the instructions on: https://git-scm.com/downloads \
+Download and install “Git” command line tool, following the instructions on: https://git-scm.com/downloads \
 Download Biodepot-workflow-builder(Bwb) repository: \
 `git clone https://github.com/BioDepot/BioDepot-workflow-builder`
 
