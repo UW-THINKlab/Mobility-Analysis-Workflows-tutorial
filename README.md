@@ -77,6 +77,13 @@ Then create a new directory, "/BioDepot-workflow-builder/trans_data", and put th
 ### 2.3 Download workflow for Case study 1 & Case study 2
 Go to https://github.com/UW-THINKlab/MAW_workflows, and download the “MAW_case1” folder and the “MAW_case2” folder. 
 
+You can download them by moving to the "/BioDepot-workflow-builder/" directory, then:
+```
+git clone https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial.git
+cp -r Mobility-Analysis-Workflows-tutorial/MAW_case1 .
+cp -r Mobility-Analysis-Workflows-tutorial/MAW_case2 .
+```
+
 Then save the downloaded workflow folders under the folder, "/BioDepot-workflow-builder".
 
 ## 3. Run Case studies 1 & 2
