@@ -84,8 +84,6 @@ cp -r Mobility-Analysis-Workflows-tutorial/MAW_case1 .
 cp -r Mobility-Analysis-Workflows-tutorial/MAW_case2 .
 ```
 
-Then save the downloaded workflow folders under the folder, "/BioDepot-workflow-builder".
-
 ## 3. Run Case studies 1 & 2
 ### 3.1 Case study 1
 After downloading the workflow for Case study 1, click "File" in the menu bar, and click "load workflow", move to the “/data” directory of MAW, then choose the downloaded workflow directory (do not enter the directory) and click “Choose”.
