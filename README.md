@@ -7,14 +7,17 @@ Before starting the tutorial, please navigate to the directory where you want al
 
 Windows:\
 `cd ${your directory path}` \
-MAC/Linux: \
+MAC / Linux: \
 `cd /your directory path`
 
 ## 1. Prepare Docker containers
 ### 1.1. Install Docker
-Install Docker Desktop following the instruction: https://docs.docker.com/get-docker/ \
-You can test in the terminal with: \
-`docker run hello-world`  \
+Install Docker Desktop following the instruction: https://docs.docker.com/get-docker/ 
+
+You can test in the terminal with: 
+
+`docker run hello-world`  
+
 You will get the result from Docker: 
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Docker%20group%20result.png)
@@ -22,7 +25,7 @@ You will get the result from Docker:
 This step is to work with Docker using your own PC.
 ### 1.2. Download Docker images 
 A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform.
-To work with MAW, we need to download the related Docker images by running: \
+To work with MAW, we need to download the related Docker images by running: 
 ```
 docker pull uwthinklab/maw_gui:v1
 docker pull uwthinklab/maw_containers_1:v1
@@ -30,8 +33,10 @@ docker pull uwthinklab/maw_visualization:v1
 ```
 ## 2. Prepare workflows
 ### 2.1 Running MAW
-First, we need "Git" tool to download code from Github. To download and install “Git” command line tool, following the instructions on: https://git-scm.com/downloads \
-Then download our repository: \
+First, we need "Git" tool to download code from Github. To download and install “Git” command line tool, following the instructions on: https://git-scm.com/downloads 
+
+Then download our repository: 
+
 `git clone https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial`
 
 **Then go to “/Mobility-Analysis-Workflows-tutorial” directory**. For Windows users, run:
