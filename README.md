@@ -10,34 +10,29 @@ MAC/Linux: \
 
 ## 1. Prepare Docker containers
 ### 1.1. Install Docker
-Install Docker Desktop following the instruction: https://docs.docker.com/get-docker/  \
-After the installation, add the current user of your PC to docker group to run docker command without root permission (only for Mac/Linux System user): 
-```
-sudo groupadd docker
-sudo gpasswd -a $USER docker      
-newgrp docker     
-```
+Install Docker Desktop following the instruction: https://docs.docker.com/get-docker/ \
 You can test in the terminal with: \
 `docker run hello-world`  \
 You will get the result from Docker: 
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Docker%20group%20result.png)
 
+This step is to work with Docker using your own PC.
 ### 1.2. Download Docker images 
-To download MAW Docker images: \
+A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform.
+To work with MAW, we need to download the related Docker images by running: \
 ```
 docker pull uwthinklab/maw_gui:v1
 docker pull uwthinklab/maw_containers_1:v1
 docker pull uwthinklab/maw_visualization:v1
 ```
-
 ## 2. Prepare workflows
-### 2.1 Download Bwb repository
-Download and install “Git” command line tool, following the instructions on: https://git-scm.com/downloads \
-Download Biodepot-workflow-builder(Bwb) repository: \
-`git clone https://github.com/BioDepot/BioDepot-workflow-builder`
+### 2.1 Running MAW
+First, we need "Git" tool to download code from Github. To download and install “Git” command line tool, following the instructions on: https://git-scm.com/downloads \
+Then download our repository: \
+`git clone https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial`
 
-Go to “/BioDepot-workflow-builder” directory. For Windows users, run:
+**Then go to “/Mobility-Analysis-Workflows-tutorial” directory**. For Windows users, run:
 ```bash 
 docker run --rm   -p 6080:6080 \
     -v  %cd%/:/data  \
@@ -55,13 +50,15 @@ docker run --rm   -p 6080:6080 \
     --privileged --group-add root \
     uwthinklab/maw_gui:v1
 ```
-This command will take a while to be executed because it will pull the Bwb Docker image automatically. Upon completion, the following information should be displayed on the terminal.
+Upon completion, the following information should be displayed on the terminal.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/BWB%20start.png)
 
 To launch MAW, go to link: http://localhost:6080/ using any web browser, which leads to the graphical interface of MAW.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/MAW.png)
+
+After testing the MAW, you can close it by typing "Ctrl+C" in the terminal where you launched your MAW.
 
 ### 2.2 Download the test data 
 You can download our test data for Case study 1 via: 
@@ -72,21 +69,18 @@ You can download our test data for Case study 2 via:
 
 https://drive.google.com/file/d/1GzEfcTjlkVM2SpuKzAGIgKJAyKMsGrtz/view?usp=sharing
 
-Then create a new directory, "/BioDepot-workflow-builder/trans_data", and put the data file under this directory. 
+Then create a new directory, "/Mobility-Analysis-Workflows-tutorial/trans_data", and put the data file under this directory. 
 
-### 2.3 Download workflow for Case study 1 & Case study 2
-Go to https://github.com/UW-THINKlab/MAW_workflows, and download the “MAW_case1” folder and the “MAW_case2” folder. 
+### 2.3 Case study 1 workflow & Case study 2 workflow
+The “MAW_case1” folder and the “MAW_case2” folder in this repo are the case study 1 workflow and case study 2 workflow implemented in our MAW paper, respectively.
 
-You can download them by moving to the "/BioDepot-workflow-builder/" directory, then:
-```
-git clone https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial.git
-cp -r Mobility-Analysis-Workflows-tutorial/MAW_case1 .
-cp -r Mobility-Analysis-Workflows-tutorial/MAW_case2 .
-```
+They containes the configuration of a workflow including the information about how the workflow is connected, which wigets are used in the workflow and etc.
+
+In this section, you don't need to type in any command. 
 
 ## 3. Run Case studies 1 & 2
 ### 3.1 Case study 1
-After downloading the workflow for Case study 1, click "File" in the menu bar, and click "load workflow", move to the “/data” directory of MAW, then choose the downloaded workflow directory (do not enter the directory) and click “Choose”.
+After launching MAW following section 2.1, click "File" in the menu bar, and click "load workflow", move to the “/data” directory of MAW, then choose the downloaded workflow directory (do not enter the directory) and click “Choose”.
 Then you should see our workflow for Case study 1 is loaded in MAW.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%201.png)
@@ -108,9 +102,9 @@ After loading the workflow, double-click "CellIncrementalClustering" widget and 
 ### 4.1. Change input and output 
 You can change input and output file of one widget: double-click one widget, and a widget configuration form will pop up. You can simply change the input and output file by clicking the folder icon next to the “Input” or “Output” textbox, and select the input file or type in the output file name in the pop-up file explorer.
 
-For case study 1, the default input file is /BioDepot-workflow-builder/trans_data/input_case1.csv, which should be the Input for the first widget “TraceSegmentationClustering”.
+For case study 1, the default input file is /Mobility-Analysis-Workflows-tutorial/trans_data/input_case1.csv, which should be the Input for the first widget “TraceSegmentationClustering”.
 
-For case study 2, the default input file is /BioDepot-workflow-builder/trans_data/input_case2.csv, which should be the Input for the first widget “IncrementalClustering”.
+For case study 2, the default input file is /Mobility-Analysis-Workflows-tutorial/trans_data/input_case2.csv, which should be the Input for the first widget “IncrementalClustering”.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Change%20Param%20case%201.png)
 
@@ -135,6 +129,8 @@ The modified workflow can be run similar as the unmodified version. After the wo
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202%20result.png)
 
 ## Reference
+Our work is built based on Bwb (https://github.com/BioDepot/BioDepot-workflow-builder)
+
 Our MAW icons are made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a>, <a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a>, <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> 
 
 
