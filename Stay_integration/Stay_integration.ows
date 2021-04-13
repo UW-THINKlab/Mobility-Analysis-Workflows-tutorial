@@ -1,0 +1,11 @@
+<?xml version="1.0" ?><scheme description="" title="Stay-integration" version="2.0">
+	<nodes>
+		<node id="0" name="Stay_Integrator" position="(687.0, 404.0)" project_name="Stay-integration" qualified_name="Stay_integration.OWStay_Integrator.OWStay_Integrator" title="Stay_Integrator" version=""/>
+	</nodes>
+	<links/>
+	<annotations/>
+	<thumbnail/>
+	<node_properties>
+		<properties format="literal" node_id="0">{'DurationConstraint': '', 'InputCell': '', 'InputGPS': '', 'Output': '/data/trans_data/case1_output.csv', 'SpatialConstraint': '', 'controlAreaVisible': True, 'exportGraphics': False, 'inputConnectionsStore': {}, 'iterate': False, 'iterateSettings': {}, 'nWorkers': 1, 'optionsChecked': {}, 'runMode': 0, 'runTriggers': [], 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x02\x00\x00\x00\x00\x02\x8d\x00\x00\x01#\x00\x00\x05j\x00\x00\x02k\x00\x00\x02\x8d\x00\x00\x01;\x00\x00\x05j\x00\x00\x02h\x00\x00\x00\x00\x00\x00\x00\x00\x05\xf7', 'triggerReady': {}, 'useScheduler': False, '__version__': 1}</properties>
+	</node_properties>
+</scheme>
