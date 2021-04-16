@@ -27,7 +27,7 @@ This step is to work with Docker using your own PC.
 A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform.
 To work with MAW, we need to download the related Docker images by running: 
 ```
-docker pull uwthinklab/maw_gui:v1
+docker pull uwthinklab/maw_gui:v2
 docker pull uwthinklab/maw_containers_1:v1
 docker pull uwthinklab/maw_visualization:v1
 ```
