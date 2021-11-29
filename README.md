@@ -110,7 +110,7 @@ In the workflow for processing GPS data, the default input file is "/Mobility-An
 
 In the workflow for processing cellular data, the default input file is /Mobility-Analysis-Workflows-tutorial/trans_data/input_case2_v2.csv, which should be the Input for the first widget “Incremental Clustering” in the workflow.
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Change%20Param%20case%201.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/8a59e32724fb52afc28278cfc91bb6d0981a0ec0/figures/configuration_window.JPG)
 
 ### 4.2. Change parameters
 Similarly, you can modify the change point values of a widget by typing in the values directly in the configuration window. For example, in the above screenshot of the workflow for processing GPS data, the widget “Trace Segmentation Clustering” has two change points, “Distance threshold” and “Duration threshold”, whose default values are sets as 0.2 km ans 300 seconds, respectively. Customized change point values can be typed in the corresponding textboxes.
