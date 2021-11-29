@@ -66,73 +66,69 @@ To launch MAW, go to link: http://localhost:6080/ using any web browser, which l
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/MAW.png)
 
-After testing the MAW, you can close it by typing "Ctrl+C" in the terminal where you launched your MAW.
+After testing the MAW, you can close it by pressing "Ctrl+C" in the terminal where you launched your MAW.
 
 ### 2.2 Download the test data 
-You can download our test data for Case study 1 via: 
+You can download the synthetic test datasets via: 
 
-https://drive.google.com/file/d/150etjTZ7EpF33l2Op1KC6xG29THicoo_/view?usp=sharing
+http://dx.doi.org/10.17632/cb2r6hv72b.1
 
-You can download our test data for Case study 2 via: 
+The two test datasets are named "input_case1_v2.csv" and "input_case2_v2.csv", respectively.
 
-https://drive.google.com/file/d/1GzEfcTjlkVM2SpuKzAGIgKJAyKMsGrtz/view?usp=sharing
+Then create a new directory, "/Mobility-Analysis-Workflows-tutorial/trans_data", and put the dataset files under this directory. 
 
-Then create a new directory, "/Mobility-Analysis-Workflows-tutorial/trans_data", and put the data file under this directory. 
+### Dowload the two example workflows
+The “MAW_case1” folder and the “MAW_case2” folder in this repository contain the two workflows for processing GPS data and cellular data, respectively. Each folder contains the configuration of a workflow including the information about which wigets are used in the workflow, how the widgets are connected, what are the default values of the change points, etc.
 
-### 2.3 Case study 1 workflow & Case study 2 workflow
-The “MAW_case1” folder and the “MAW_case2” folder in this repo are the case study 1 workflow and case study 2 workflow implemented in our MAW paper, respectively.
+After you download the “MAW_case1” folder and “MAW_case2” folder to you computer, make sure they are in the directory "/Mobility-Analysis-Workflows-tutorial". 
 
-They containes the configuration of a workflow including the information about how the workflow is connected, which wigets are used in the workflow and etc.
-
-In this section, you don't need to type in any command. 
-
-## 3. Run Case studies 1 & 2
-### 3.1 Case study 1
-After launching MAW following section 2.1, click "File" in the menu bar, and click "load workflow", move to the “/data” directory of MAW, then choose the downloaded workflow directory (do not enter the directory) and click “Choose”.
-Then you should see our workflow for Case study 1 is loaded in MAW.
+## 3. Run example workflows
+### 3.1 Workflow for processing GPS data
+After launching MAW following section 2.1, click "File" in the menu bar, and click "Load workflow", move to the “/data” directory, choose the folder “MAW_case1” (do not enter the directory), and click the “Choose” button.
+Then you should see the workflow as shown below.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%201.png)
 
-After loading the workflow, double-click "TraceSegmentationClustering" widget and click "start", your workflow will start to run! If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "TraceSegmentationClustering" widget before start running it. After the workflow is completed, you will see the following output.
+After loading the workflow, double-click the "Trace Segmentation Clustering" widget and click "Start", and the workflow will start running. If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "Trace Segmentation Clustering" widget before start running it. After the workflow is completed, you will see the following output.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%201%20result.png)
 
-### 3.2 Case study 2
-Similarly, you can load the workflow for Case study 2 in MAW. 
+### 3.2 Workflow for processing cellular data
+Similarly as in section 3.1, you can load the workflow for processing cellular data by choosing the “MAW_case2” folder. 
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202.png)
 
-After loading the workflow, double-click "CellIncrementalClustering" widget and click "start", your workflow will start to run! If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "IncrementalClustering" widget before start running it. After the workflow is completed, you will see the following output.
+After loading the workflow, double-click the "Incremental Clustering" widget and click "Start", and your workflow will start running. If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "Incremental Clustering" widget before start running it. After the workflow is completed, you will see the following output.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202%20result.png)
 
 ## 4. Modify the workflow and widgets
 ### 4.1. Change input and output 
-You can change input and output file of one widget: double-click one widget, and a widget configuration form will pop up. You can simply change the input and output file by clicking the folder icon next to the “Input” or “Output” textbox, and select the input file or type in the output file name in the pop-up file explorer.
+You can change the input and output files of a widget in the following steps: double-click the widget, and a widget configuration window will pop up. You can change the input and output files by simply clicking the folder icon next to the “Input” or “Output” textbox, and select the input file or type in the output file name in the pop-up file explorer.
 
-For case study 1, the default input file is /Mobility-Analysis-Workflows-tutorial/trans_data/input_case1.csv, which should be the Input for the first widget “TraceSegmentationClustering”.
+In the workflow for processing GPS data, the default input file is "/Mobility-Analysis-Workflows-tutorial/trans_data/input_case1_v2.csv", which should be the Input for the first widget “Trace Segmentation Clustering” in the workflow.
 
-For case study 2, the default input file is /Mobility-Analysis-Workflows-tutorial/trans_data/input_case2.csv, which should be the Input for the first widget “IncrementalClustering”.
+In the workflow for processing cellular data, the default input file is /Mobility-Analysis-Workflows-tutorial/trans_data/input_case2_v2.csv, which should be the Input for the first widget “Incremental Clustering” in the workflow.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Change%20Param%20case%201.png)
 
 ### 4.2. Change parameters
-Similarly, you can change the parameters of a widget by typing in the parameters directly in the configuration form. For example, in the above screenshot for case study 1, the widget “TraceSegmentationClustering” has two parameters, “SpatialConstraint” and “DurationConstraint”, whose default values are sets as 0.2 ans 300, respectively. Customized parameter values can be typed in corresponding textboxes.
+Similarly, you can modify the change point values of a widget by typing in the values directly in the configuration window. For example, in the above screenshot of the workflow for processing GPS data, the widget “Trace Segmentation Clustering” has two change points, “Distance threshold” and “Duration threshold”, whose default values are sets as 0.2 km ans 300 seconds, respectively. Customized change point values can be typed in the corresponding textboxes.
 
 ### 4.3. Customize a workflow
-There are numerous ways a workflow can be changed and customized. We give an example of how to skip the widget of “Oscillation Corrector” in case study 2. 
+There are numerous ways a workflow can be changed or customized. We give an example of how to skip the widget of “Oscillation Corrector” in the workflow for processing cellular data. 
 
-First, the widget “Oscillation Corrector” and the subsequent widget “Stay Duration Calculator” need to be removed from the canvas. To do so, right-click on each widget, and click “Remove”. 
+First, the widget “Oscillation Corrector” and the subsequent widget “Stay Duration Calculator” need to be removed from the workflow. To do so, right-click on each widget, and click “Remove”. 
 
-Then, a link needs to be drawn from the remaining “Stay Duration Calculator” widget to the “gnumeric” widget. To do so, click on the right edge of  “Stay Duration Calculator”, hold and drag to the left edge of “gnumeric”. Upon release the click, a link configuration window will pop up as shown in the following screenshot.
+Then, a link needs to be drawn from the remaining “Stay Duration Calculator” widget to the “gnumeric” widget. To do so, left-click on the right edge of  “Stay Duration Calculator”, hold and drag to the left edge of “gnumeric”. Upon releasing your mouse, a link configuration window will pop up as shown in the following screenshot.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Add%20Link.png)
 
-The link configuration window defines the functionality of the link. In the above screenshot, the link means the output of  “Stay Duration Calculator” serves as input to “gnumeric”, and should be kept this way. If the link is configured differently, it can be adjusted by clicking the checkboxes. Then click “OK” to confirm the configuration and close the pop-up window. The modified workflow looks as below.
+The link configuration window defines the functionality of the link. In the above screenshot, the link means the output of  “Stay Duration Calculator” serves as input to “gnumeric”, and should be kept this way. If the link needs to be configured differently, it can be adjusted by clicking the checkboxes. Then click “Ok” to confirm the configuration and close the pop-up window. The modified workflow looks as below.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Delete%20widget.png)
 
-The modified workflow can be run similar as the unmodified version. After the workflow is completed, the output should look as below.
+The modified workflow can be run similarly as the unmodified version. After the workflow is completed, the output should look as below.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202%20result.png)
 
