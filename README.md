@@ -122,15 +122,15 @@ First, the widget “Oscillation Corrector” and the subsequent widget “Stay 
 
 Then, a link needs to be drawn from the remaining “Stay Duration Calculator” widget to the “gnumeric” widget. To do so, left-click on the right edge of  “Stay Duration Calculator”, hold and drag to the left edge of “gnumeric”. Upon releasing your mouse, a link configuration window will pop up as shown in the following screenshot.
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Add%20Link.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/18857324ef2a012bdf57b5936d9efcb3e1560da0/figures/remove_widget.JPG)
 
 The link configuration window defines the functionality of the link. In the above screenshot, the link means the output of  “Stay Duration Calculator” serves as input to “gnumeric”, and should be kept this way. If the link needs to be configured differently, it can be adjusted by clicking the checkboxes. Then click “Ok” to confirm the configuration and close the pop-up window. The modified workflow looks as below.
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Delete%20widget.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/18857324ef2a012bdf57b5936d9efcb3e1560da0/figures/remove_widget_1.JPG)
 
 The modified workflow can be run similarly as the unmodified version. After the workflow is completed, the output should look as below.
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202%20result.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/18857324ef2a012bdf57b5936d9efcb3e1560da0/figures/remove_widget_2.JPG)
 
 ## Reference
 Our work is built based on Bwb (https://github.com/BioDepot/BioDepot-workflow-builder)
