@@ -28,8 +28,9 @@ A Docker image is a read-only template that contains a set of instructions for c
 To work with MAW, we need to download the related Docker images by running: 
 ```
 docker pull uwthinklab/maw_gui:v2
-docker pull uwthinklab/maw_containers_1:v1
+docker pull uwthinklab/maw_containers_1:v6
 docker pull uwthinklab/maw_visualization:v1
+docker pull uwthinklab/maw_visualization:gnumeric
 ```
 ## 2. Prepare workflows
 ### 2.1 Running MAW
