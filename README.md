@@ -87,7 +87,7 @@ After you download the “MAW_case1” folder and “MAW_case2” folder to you 
 After launching MAW following section 2.1, click "File" in the menu bar, and click "Load workflow", move to the “/data” directory, choose the folder “MAW_case1” (do not enter the directory), and click the “Choose” button.
 Then you should see the workflow as shown below.
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%201.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/449c6b3c926e3bdf764adf473317c7223a645052/figures/workflow%206.png)
 
 After loading the workflow, double-click the "Trace Segmentation Clustering" widget and click "Start", and the workflow will start running. If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "Trace Segmentation Clustering" widget before start running it. After the workflow is completed, you will see the following output.
 
