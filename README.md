@@ -96,7 +96,7 @@ After loading the workflow, double-click the "Trace Segmentation Clustering" wid
 ### 3.2 Workflow for processing cellular data
 Similarly as in section 3.1, you can load the workflow for processing cellular data by choosing the “MAW_case2” folder. 
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Case%202.png)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/2e6e6f053ec672cf197f05350d9e723617cc4997/figures/workflow%202.png)
 
 After loading the workflow, double-click the "Incremental Clustering" widget and click "Start", and your workflow will start running. If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "Incremental Clustering" widget before start running it. After the workflow is completed, you will see the following output.
 
