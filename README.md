@@ -1,3 +1,16 @@
+# Tutorial for using MAW from shell scripts (requires Linux systems)
+This tutorial provides instructions on how to set up a Linux machine and run workflows using shell scripts.
+
+Since the containers in the MAW are built using Docker, it is intuitive to also run the MAW using Docker. However, Docker has a critical limitation: it requires administrative access to launch the Docker platform and execute the containers, and thus cannot be used in cloud servers (e.g. AWS Lambda) or shared computers that do not grant administrative access to users. To ensure the interoperability of this tutorial on machines that grant administrative access or not, an alternative container platform named [Singularity](https://sylabs.io/guides/2.6/user-guide/index.html#) is used to run the containers and workflows in the MAW in this tutorial. Singularity does not require administrative access to be launched and working, and is compatible with Docker, meaning that containers and workflows built using Docker can be run using Singularity. 
+
+## 1. Installing Singularity
+Follow [these steps](https://sylabs.io/guides/3.5/admin-guide/installation.html) to install Singularity. To verify if Singularity is installed properly, run the following command.
+
+`singularity run docker://hello-world`
+
+If the following output is displayed, Singularity will be ready to use.
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Docker%20group%20result.png)
+
 # Mobility-Analysis-Workflows-tutorial
 Watch our video tutorial to learn how to work with MAW:https://www.youtube.com/watch?v=9emIszx2hgo
 
