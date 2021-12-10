@@ -162,6 +162,11 @@ Compared to the Workflow 6 described in Section 4.2 of the paper, the four visua
 Output visualization for Workflow 6 is in the same format as for Workflow 2, and thus will not be described in detail here.
 
 ## 7. Running containers or workflows with users’ own datasets (optional)
+MAW allows users to analyze their own datasets using its containers and workflows. Suppose a user would like to apply the Workflow 6 to analyze a custom dataset stored in a csv file named “real-world data.csv”. First, the csv file needs to be place in the directory `${wd}/Mobility-Analysis-Workflows-tutorial/trans_data`. 
+
+After loading the Workflow 6 as described in Step 6.2, double-click the "Trace Segmentation Clustering" icon. In the pop-up window, there is a text box titled “Input”. The path to the custom csv file can be typed in this text box to change the input to the custom dataset. In this case, the path to the custom csv file should be “/data/trans_data/real-world data.csv”, as shown in the following screenshot. Alternatively, one can click the folder icon next to the input text box, navigate to the custom csv file and select and open the file. Once the input path has been changed, clicking the “Start” button will start analyzing the designated dataset. 
+
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/6c0e8d84acca7114b64e9979a1dc2e4b672ff692/figures/configuration_window.JPG)
 
 
 
