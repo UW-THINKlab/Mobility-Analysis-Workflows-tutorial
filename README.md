@@ -1,4 +1,4 @@
-# Tutorial for using MAW from shell scripts (requires Linux systems)
+# Tutorial A: Using MAW from shell scripts (requires Linux systems)
 This tutorial provides instructions on how to set up a Linux machine and run workflows using shell scripts.
 
 Since the containers in the MAW are built using Docker, it is intuitive to also run the MAW using Docker. However, Docker has a critical limitation: it requires administrative access to launch the Docker platform and execute the containers, and thus cannot be used in cloud servers (e.g. AWS Lambda) or shared computers that do not grant administrative access to users. To ensure the interoperability of this tutorial on machines that grant administrative access or not, an alternative container platform named [Singularity](https://sylabs.io/guides/2.6/user-guide/index.html#) is used to run the containers and workflows in the MAW in this tutorial. Singularity does not require administrative access to be launched and working, and is compatible with Docker, meaning that containers and workflows built using Docker can be run using Singularity. 
@@ -53,7 +53,7 @@ Shell script files have the extension “.sh”. Suppose the shell script create
 <br/>
 <br/>
 
-# Tutorial for using MAW from a graphical user interface
+# Tutorial B: Using MAW from a graphical user interface
 In this tutorial, the BioDepot-workflow-builder (Bwb) (Hung et al., 2019) is employed to run Workflow 2 and Workflow 6 described in Section 4.2 of the paper, using a synthetic cellular dataset and GPS dataset. Bwb provides an easy-to-use graphical interface: each container is represented as a widget (an icon that allows users to deploy, configure and execute the container), and a workflow is represented as a directed acyclic graph of widgets. Running MAW through Bwb requires minimum programming skills from the user, and thus allows users to easily access and reproduce mobility analysis methods and results.
 
 A video version of this tutorial can be found at https://www.youtube.com/watch?v=9emIszx2hgo.
@@ -71,76 +71,99 @@ If the following output is shown, Docker is properly installed and running. Then
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Docker%20group%20result.png)
 
-This step is to work with Docker using your own PC.
-### 1.2. Download Docker images 
-A Docker image is a read-only template that contains a set of instructions for creating containers that can run on the Docker platform.
-To work with MAW, we need to download the relevant Docker images by running: 
+## 2. Downloading Docker images
+This step is similar to Step 2 in Tutorial A, with two differences. First, Docker images will be downloaded using Docker instead of Singularity; and second, two other Docker images in addition to `uwthinklab/maw_containers_1:v6` are needed for the graphical user interface to work properly. These two Docker images are listed below. 
+
+  * `uwthinklab/maw_gui`: the Docker image for creating the container that provide the graphical user interface for MAW;
+  * `uwthinklab/maw_visualization`: the Docker image for creating four containers that are used to visualize inferred mobility patterns.
+
+To download all the required Docker images, run the following commands on the Mac/Linux terminal or Window command-line interface.
+
 ```
 docker pull uwthinklab/maw_gui:v2
 docker pull uwthinklab/maw_containers_1:v6
 docker pull uwthinklab/maw_visualization:v1
 docker pull uwthinklab/maw_visualization:gnumeric
 ```
-## 2. Prepare workflows
-### 2.1 Running MAW
-First, we need "Git" tool to download code from Github. To download and install “Git” command line tool, following the instructions on: https://git-scm.com/downloads 
 
-Then download our repository: 
+## 3. Downloading the example workflows
+Workflow 2 and workflow 6 described in Section 4.2 of the paper are stored in folders “[MAW_case1](MAW_case1)” and “[MAW_case2](MAW_case1)” in this repository, respectively.
+
+Git will be used to download the example workflows. Follow the instructions on https://git-scm.com/downloads to install Git if it has not been installed.
+
+After installing Git, restart the terminal or command-line interface. Then navigate to your working directory (denoted as `${wd}` hereafter) on the terminal or command-line interface by typing in `cd ${wd}`, and run the following command.
 
 `git clone https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial`
 
-**Then go to “/Mobility-Analysis-Workflows-tutorial” directory**. For Windows users, run:
-```bash 
-docker run --rm   -p 6080:6080 \
-    -v  %cd%/:/data  \
-    -v  /var/run/docker.sock:/var/run/docker.sock \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    --privileged --group-add root \
-    uwthinklab/maw_gui:v1
-```
-For MAC/Linux Users, run:
-```bash 
-docker run --rm   -p 6080:6080 \
-    -v  ${PWD}/:/data  \
-    -v  /var/run/docker.sock:/var/run/docker.sock \
-    -v /tmp/.X11-unix:/tmp/.X11-unix \
-    --privileged --group-add root \
-    uwthinklab/maw_gui:v1
-```
-Upon completion, the following information should be displayed on the terminal.
+This creates a new folder named “Mobility-Analysis-Workflows-tutorial” in the working directory. In this folder, two sub-folders “MAW_case1” and “MAW_case2” contain Workflows 2 and 6, respectively. Navigate into the “Mobility-Analysis-Workflows-tutorial” folder in the terminal or command-line interface.
+
+## 4. Downloading the synthetic datasets
+The synthetic GPS dataset for testing Workflow 6, and the synthetic cellular dataset for testing Workflow 2 can both be downloaded from: http://dx.doi.org/10.17632/cb2r6hv72b.1. The two datasets reside in the files “`input_case1_v2.csv” and “input_case2_v2.csv”, respectively.
+
+Download these two csv files, create a new directory `${wd}/Mobility-Analysis-Workflows-tutorial/trans_data`, and place the csv files in this new directory.
+
+## 5. Launching the graphical interface for MAW
+The graphical interface allows users to access the five containers (see Section 3.1 of the paper) and the two example workflows in MAW. Workflows can be executed in the graphical interface by simply clicking a few buttons, and the workflow output (i.e. inferred stays) can be visualized on a map.
+
+Before launching the MAW graphical interface, please make sure that the terminal or command-line interface is navigated to the directory `${wd}/Mobility-Analysis-Workflows-tutorial`.
+
+To launch the graphical interface, for MAC/Linux users, run the following command.
+
+`docker run --rm   -p 6080:6080 -v  ${PWD}/:/data -v  /var/run/docker.sock:/var/run/docker.sock -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --group-add root uwthinklab/maw_gui:v2`
+
+For Windows users, run the following command.
+
+`docker run --rm   -p 6080:6080 -v  %cd%/:/data -v  /var/run/docker.sock:/var/run/docker.sock -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --group-add root uwthinklab/maw_gui:v2`
+
+The launch is successful if the following output is displayed on the terminal or command-line interface.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/BWB%20start.png)
 
-To launch MAW, go to link: http://localhost:6080/ using any web browser, which leads to the graphical interface of MAW.
+To access MAW’s graphical interface, go to link: http://localhost:6080/ using any web browser. The following page will be pop up.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/MAW.png)
 
-After testing the MAW, you can close it by pressing "Ctrl+C" in the terminal where you launched your MAW.
+## 6. Running example workflows
+### 6.1. Running Workflow 2
+On the graphical interface shown above, click "File" in the menu bar, and click "Load workflow". Navigate to the “/data” directory in the “Load workflow from Directory” window, then choose the downloaded workflow folder “MAW_case2” (do NOT enter the folder) and click “Choose”. Then the Workflow 2 will be shown on the graphical interface as in the following screenshot.
 
-### 2.2 Download the test data 
-You can download the synthetic test datasets via: 
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/2e6e6f053ec672cf197f05350d9e723617cc4997/figures/workflow%202.png)
 
-http://dx.doi.org/10.17632/cb2r6hv72b.1
+Compared to the Workflow 2 described in Section 4.2 of the paper, the four visualization containers – “Select Users To Display”, “Execute Notebook”, “Display Notebook” and “gnumeric” – are also concatenated to the workflow to allow users to view the mobility analysis results. To start running the workflow, double-click the "Incremental Clustering" icon and click the "Start" button in the pop-up window. The “Incremental Clustering” container will then start running, and all subsequent containers will automatically start running following the linking order. When the “gnumeric” container finishes running, a spreadsheet will pop up showing the analyzed location records with stay information attached, as in the following screenshot.
 
-The two test datasets are named "input_case1_v2.csv" and "input_case2_v2.csv", respectively.
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/0141b49382f10c606f55626ebd8b4bac7469c6a7/figures/workflow%202%20results.png)
 
-Then create a new directory, "/Mobility-Analysis-Workflows-tutorial/trans_data", and put the dataset files under this directory. 
+There are 12 fields in the spreadsheet. The meaning of each field is given below.
+  * `unix_start_t`: the unix time stamp at which a location record is observed;
+  * `user_ID`: a unique identifier for each mobile device;
+  * `mark_1`: the operating system (OS) on the mobile device, 0 for Android, 1 for iOS and “Nothing” for unknown OS;
+  * `orig_lat`: the latitude of the location record in decimal degrees;
+  * `orig_long`: the longitude of the location record in decimal degrees;
+  * `orig_unc`: the location accuracy of the location record in meters;
+  * `stay_lat`, `stay_long`, `stay_unc`, `stay_dur`: the latitude, longitude, radius (see Section 3.1 of the paper) and duration in seconds of the inferred stay; if any of these four fields has a value of -1,  this location record is not associated with any stay (i.e. a transient point);
+  * `stay_ind`: a unique identifier given to each inferred stay. This field is not calculated for the example workflows and always has a placeholder value of -1;
+  * `human_start_t`: translation of unix_start_t into year (first two digits), month (third and fourth digits), day (fifth and sixth digits), hour (seventh and eighth digits), minute (ninth and tenth digits) and second (eleventh and twelfth digits).
 
-### Dowload the two example workflows
-The “MAW_case1” folder and the “MAW_case2” folder in this repository contain the two workflows for processing GPS data and cellular data, respectively. Each folder contains the configuration of a workflow including the information about which wigets are used in the workflow, how the widgets are connected, what are the default values of the change points, etc.
+When the “Display Notebook” container finishes running, a Jupyter notebook will pop up showing the visualized location records and inferred stays on maps, as in the following screenshot. Location records are represented as small red circles, and inferred stays are represented as larger red dots. Green lines connect temporally consecutive location records. Two maps are shown on each notebook, the first one with raw location records, and the second one with both location records and inferred stays.
 
-After you download the “MAW_case1” folder and “MAW_case2” folder to you computer, make sure they are in the directory "/Mobility-Analysis-Workflows-tutorial". 
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/1012cbaf2db44fee6b5d794462c812421f8c715e/figures/workflow%202%20visual.png)
 
-## 3. Run example workflows
-### 3.1 Workflow for processing GPS data
-After launching MAW following section 2.1, click "File" in the menu bar, and click "Load workflow", move to the “/data” directory, choose the folder “MAW_case1” (do not enter the directory), and click the “Choose” button.
-Then you should see the workflow as shown below.
+### 6.2. Running Workflow 6
+Restart MAW by first shutting down the running containers, and then following Step 5 to re-launch MAW. To shut down the containers, first close the webpage running Workflow 2. Then open Docker Desktop, and for each running container, click the “STOP” button, as shown below.
+
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/6a64a999a83a8a27d933928ce9a536ea2f55d333/figures/stop%20containers.png)
+
+Workflow 6 can be loaded onto the graphical interface similarly as Workflow 2. The loaded Workflow 6 is shown in the following screenshot.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/449c6b3c926e3bdf764adf473317c7223a645052/figures/workflow%206.png)
 
-After loading the workflow, double-click the "Trace Segmentation Clustering" widget and click "Start", and the workflow will start running. If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "Trace Segmentation Clustering" widget before start running it. After the workflow is completed, you will see the following output.
+Compared to the Workflow 6 described in Section 4.2 of the paper, the four visualization containers are concatenated to the workflow. To run the workflow, double-click the "Trace Segmentation Clustering" icon and click the "Start" button in the pop-up window. 
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/0141b49382f10c606f55626ebd8b4bac7469c6a7/figures/workflow%206%20result.png)
+Output visualization for Workflow 6 is in the same format as for Workflow 2, and thus will not be described in detail here.
+
+## 7. Running containers or workflows with users’ own datasets (optional)
+
+
 
 ### 3.2 Workflow for processing cellular data
 Similarly as in section 3.1, you can load the workflow for processing cellular data by choosing the “MAW_case2” folder. 
