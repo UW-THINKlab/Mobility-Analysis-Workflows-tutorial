@@ -54,26 +54,20 @@ Shell script files have the extension “.sh”. Suppose the shell script create
 <br/>
 
 # Tutorial for using MAW from a graphical user interface
-Watch our video tutorial to learn how to work with MAW:https://www.youtube.com/watch?v=9emIszx2hgo
+In this tutorial, the BioDepot-workflow-builder (Bwb) (Hung et al., 2019) is employed to run Workflow 2 and Workflow 6 described in Section 4.2 of the paper, using a synthetic cellular dataset and GPS dataset. Bwb provides an easy-to-use graphical interface: each container is represented as a widget (an icon that allows users to deploy, configure and execute the container), and a workflow is represented as a directed acyclic graph of widgets. Running MAW through Bwb requires minimum programming skills from the user, and thus allows users to easily access and reproduce mobility analysis methods and results.
 
-All commands in this tutorial should be executed on Mac/Linux terminal or Windows command-line interface. 
+A video version of this tutorial can be found at https://www.youtube.com/watch?v=9emIszx2hgo.
 
-Before starting the tutorial, please navigate to the directory where you want all the downloaded tools and data to be stored, using the following command on the terminal/command-line interface.
+## 1. Installing Docker
+Both MAW and Bwb are implemented using Docker containers. Therefore, installing Docker properly is a prerequisite to launch MAW and Bwb on a computer.
 
-Windows:\
-`cd ${your directory path}` \
-MAC / Linux: \
-`cd /your directory path`
+To install Docker (Desktop version), please follow the instructions on https://docs.docker.com/get-docker/.
 
-## 1. Prepare Docker containers
-### 1.1. Install Docker
-Install Docker Desktop following the instruction: https://docs.docker.com/get-docker/ 
+To make sure Docker is installed and running properly on your computer, open terminal (for Mac/Linux user) or command-line interface (for Windows users) and test the following command.
 
-You can test in the terminal with: 
+`docker run hello-world`
 
-`docker run hello-world`  
-
-You will get the result from Docker: 
+If the following output is shown, Docker is properly installed and running. Then proceed to the next step. Otherwise, please refer to the [troubleshooting](https://docs.docker.com/docker-for-windows/troubleshoot/) and [FAQs](https://docs.docker.com/desktop/faqs/) for using Docker. 
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/master/figures/Docker%20group%20result.png)
 
@@ -188,7 +182,9 @@ The modified workflow can be run similarly as the unmodified version. After the 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/18857324ef2a012bdf57b5936d9efcb3e1560da0/figures/remove_widget_2.JPG)
 
 ## Reference
-Our work is built based on Bwb (https://github.com/BioDepot/BioDepot-workflow-builder)
+Our work is built based on Bwb (https://github.com/BioDepot/BioDepot-workflow-builder). See also:
+
+Hung, L.-H., Hu, J., Meiss, T., Ingersoll, A., Lloyd, W., Kristiyanto, D., Xiong, Y., Sobie, E., Yeung, K.Y., 2019. Building Containerized Workflows Using the BioDepot-Workflow-Builder. Cell Systems 9, 508-514.e3. https://doi.org/10.1016/j.cels.2019.08.007.
 
 Our MAW icons are made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a>, <a href="https://www.flaticon.com/authors/itim2101" title="itim2101">itim2101</a>, <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a>, <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> 
 
