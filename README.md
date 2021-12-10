@@ -166,38 +166,18 @@ MAW allows users to analyze their own datasets using its containers and workflow
 
 After loading the Workflow 6 as described in Step 6.2, double-click the "Trace Segmentation Clustering" icon. In the pop-up window, there is a text box titled “Input”. The path to the custom csv file can be typed in this text box to change the input to the custom dataset. In this case, the path to the custom csv file should be “/data/trans_data/real-world data.csv”, as shown in the following screenshot. Alternatively, one can click the folder icon next to the input text box, navigate to the custom csv file and select and open the file. Once the input path has been changed, clicking the “Start” button will start analyzing the designated dataset. 
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/6c0e8d84acca7114b64e9979a1dc2e4b672ff692/figures/configuration_window.JPG)
+![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/9c91dd0248c2237853e76bb5f5108747ca55784f/figures/configuration_window.JPG)
 
+The input to any other container can be changed in the same way.
 
+When the input dataset changes, it is possible that different values for the change points are preferred. Assigning different change point values can be done in the same pop-up window as the one for specifying container input. In the above screenshot, the “Trace Segmentation Clustering” container has a distance threshold of 0.2 km and duration threshold of 300 seconds. These values can be changed by users in this pop-up window. For other containers, the values of their change points can be modified in the same way.
 
-### 3.2 Workflow for processing cellular data
-Similarly as in section 3.1, you can load the workflow for processing cellular data by choosing the “MAW_case2” folder. 
+## 8. Modify the workflow
+There are numerous ways a workflow can be changed or customized. We give an example of how to skip the container of “Oscillation Corrector” in Workflow 2. 
 
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/2e6e6f053ec672cf197f05350d9e723617cc4997/figures/workflow%202.png)
+First, the container “Oscillation Corrector” and the subsequent container “Stay Duration Calculator” need to be removed from the workflow. To do so, right-click on each widget, and click “Remove”. 
 
-After loading the workflow, double-click the "Incremental Clustering" widget and click "Start", and your workflow will start running. If error occurs, see step 4 “Modify the workflow and widgets” to reconfigure the "Incremental Clustering" widget before start running it. After the workflow is completed, you will see the following output.
-
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/0141b49382f10c606f55626ebd8b4bac7469c6a7/figures/workflow%202%20results.png)
-
-## 4. Modify the workflow and widgets
-### 4.1. Change input and output 
-You can change the input and output files of a widget in the following steps: double-click the widget, and a widget configuration window will pop up. You can change the input and output files by simply clicking the folder icon next to the “Input” or “Output” textbox, and select the input file or type in the output file name in the pop-up file explorer.
-
-In the workflow for processing GPS data, the default input file is "/Mobility-Analysis-Workflows-tutorial/trans_data/input_case1_v2.csv", which should be the Input for the first widget “Trace Segmentation Clustering” in the workflow.
-
-In the workflow for processing cellular data, the default input file is /Mobility-Analysis-Workflows-tutorial/trans_data/input_case2_v2.csv, which should be the Input for the first widget “Incremental Clustering” in the workflow.
-
-![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/8a59e32724fb52afc28278cfc91bb6d0981a0ec0/figures/configuration_window.JPG)
-
-### 4.2. Change parameters
-Similarly, you can modify the change point values of a widget by typing in the values directly in the configuration window. For example, in the above screenshot of the workflow for processing GPS data, the widget “Trace Segmentation Clustering” has two change points, “Distance threshold” and “Duration threshold”, whose default values are sets as 0.2 km ans 300 seconds, respectively. Customized change point values can be typed in the corresponding textboxes.
-
-### 4.3. Customize a workflow
-There are numerous ways a workflow can be changed or customized. We give an example of how to skip the widget of “Oscillation Corrector” in the workflow for processing cellular data. 
-
-First, the widget “Oscillation Corrector” and the subsequent widget “Stay Duration Calculator” need to be removed from the workflow. To do so, right-click on each widget, and click “Remove”. 
-
-Then, a link needs to be drawn from the remaining “Stay Duration Calculator” widget to the “gnumeric” widget. To do so, left-click on the right edge of  “Stay Duration Calculator”, hold and drag to the left edge of “gnumeric”. Upon releasing your mouse, a link configuration window will pop up as shown in the following screenshot.
+Then, a link needs to be drawn from the remaining “Stay Duration Calculator” container to the “gnumeric” container. To do so, left-click on the right edge of  “Stay Duration Calculator”, hold and drag to the left edge of “gnumeric”. Upon releasing your mouse, a link configuration window will pop up as shown in the following screenshot.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/18857324ef2a012bdf57b5936d9efcb3e1560da0/figures/remove_widget.JPG)
 
@@ -205,7 +185,7 @@ The link configuration window defines the functionality of the link. In the abov
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/18857324ef2a012bdf57b5936d9efcb3e1560da0/figures/remove_widget_1.JPG)
 
-The modified workflow can be run similarly as the unmodified version. After the workflow is completed, the output should look as below.
+The modified workflow can be run similarly as Workflow 2 in the paper. After the workflow is completed, the output should look as below.
 
 ![alt text](https://github.com/UW-THINKlab/Mobility-Analysis-Workflows-tutorial/blob/18857324ef2a012bdf57b5936d9efcb3e1560da0/figures/remove_widget_2.JPG)
 
